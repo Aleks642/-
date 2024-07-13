@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поштовий сервіс</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Поштовий сервіс</div>
+        <nav>
+            <ul>
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Особистий кабінет</a></li>
+                <li><a href="#">Вихід</a></li>
+            </ul>
+        </nav>
+        <div class="users">
+            <ul>
+                <li>Кравець Олександр</li>
+                <li>Тринько Микита</li>
+                <li>Сотниченко Артем</li>
+                <li>Вірченко Богдан</li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Ласкаво просимо до поштового сервісу</h1>
+            <p>Тут можна відправляти та отримувати листи, керувати контактами та багато іншого.</p>
+        </section>
+
+        <section class="login-section">
+            <h2>Увійти до свого облікового запису</h2>
+            <form action="login" method="POST">
+                <label for="username">Ім'я користувача:</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Пароль:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Увійти">
+            </form>
+        </section>
+
+        <section class="register-section">
+            <h2>Зареєструватися</h2>
+            <form action="register" method="POST">
+                <label for="newUsername">Ім'я користувача:</label><br>
+                <input type="text" id="newUsername" name="newUsername" required><br><br>
+                <label for="newPassword">Пароль:</label><br>
+                <input type="password" id="newPassword" name="newPassword" required><br><br>
+                <label for="email">Електронна пошта:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <input type="submit" value="Зареєструватися">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Поштовий сервіс. BETA.</p>
+    </footer>
+
+    <script>
+       let lastScrollTop = 0;
+       window.addEventListener("scroll", function() {
+           let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+           if (currentScroll > lastScrollTop) {
+               // Scroll down
+               document.querySelector("footer").classList.add("footer-hidden");
+           } else {
+               // Scroll up
+               document.querySelector("footer").classList.remove("footer-hidden");
+           }
+           lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+       });
+   </script>
+</body>
+</html>
